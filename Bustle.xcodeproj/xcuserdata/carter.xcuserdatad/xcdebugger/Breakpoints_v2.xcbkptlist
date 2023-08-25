@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "01C685F8-D98B-4D0C-A5FD-6D93E0E945DD"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56026E91-6B96-4D7A-B62B-7AC0C1E628F9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Networking/GenericApi.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "fetch(type:with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD8CCDCF-FF7B-4348-BF1E-5552A1613955"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SchedulesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getSchedule(routeID:stopID:vehicleID:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DD8CCDCF-FF7B-4348-BF1E-5552A1613955 - 17dd36e8efd6df67"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bustle.SchedulesViewModel.getSchedule(routeID: Swift.Int, stopID: Swift.Int, vehicleID: Swift.Int) -&gt; Swift.Optional&lt;Bustle.Schedule&gt;"
+                  moduleName = "Bustle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carter/Documents/Bustle/SchedulesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "DD8CCDCF-FF7B-4348-BF1E-5552A1613955 - 3f4c8be864e8ac13"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Bustle.Schedule) -&gt; Swift.Bool in Bustle.SchedulesViewModel.getSchedule(routeID: Swift.Int, stopID: Swift.Int, vehicleID: Swift.Int) -&gt; Swift.Optional&lt;Bustle.Schedule&gt;"
+                  moduleName = "Bustle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carter/Documents/Bustle/SchedulesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "DD8CCDCF-FF7B-4348-BF1E-5552A1613955 - d4870ad3e6b87212"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Bustle.Schedule) -&gt; Swift.Bool in Bustle.SchedulesViewModel.getSchedule(routeID: Swift.Int, stopID: Swift.Int, vehicleID: Swift.Int) -&gt; Swift.Optional&lt;Bustle.Schedule&gt;"
+                  moduleName = "Bustle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carter/Documents/Bustle/SchedulesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "934B7C68-A4BC-4E95-8A0C-0A3697277E78"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bustle/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1BAD4465-1EEA-48AB-AE36-3AF91461C813"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bustle/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

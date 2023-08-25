@@ -6,32 +6,32 @@
 //
 
 import Foundation
-import SwiftUI
 
 @MainActor
-class RoutesViewModel: ObservableObject {
+class BussesViewModel: ObservableObject {
     private let client = Client()
-    @Published private(set) var routes: Routes = []
-    @Published private(set) var uniqueStops: [Stop] = []
-    @Published private(set) var stopsByAddress: [Int: Stop] = [:]
+    @Published private(set) var busses: Vehicles = []
     @Published private(set) var errorMessage: String = ""
     @Published var hasError: Bool = false
 
         var request: URLRequest = {
-            let urlString = "\(Constants.baseUrl)GetRoutesForMapWithScheduleWithEncodedLine"
+            let urlString = "\(Constants.baseUrl)GetMapVehiclePoints"
             let url = URL(string: urlString)!
             return URLRequest(url: url)
         }()
 
         func fetch() async {
             do {
-                let response = try await client.fetch(type: Routes.self, with: request)
-                routes = response.compactMap { $0 }
-                uniqueStops = routes.flatMap{$0.stops}.uniqued()
+                let response = try await client.fetch(type: Vehicles.self, with: request)
+                busses = response.compactMap { $0 }
             } catch {
                 errorMessage = "\((error as! ApiError).customDescription)"
                 hasError = true
             }
         }
     
+    func getBussesWithRouteID(id: Int) -> Vehicles {
+        return busses.filter{$0.routeID == id}
     }
+
+}

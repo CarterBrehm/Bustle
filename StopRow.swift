@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct StopRow: View {
+    var stop: Stop
+    var schedule: Schedule
+    var routeColor: Color
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack(alignment: .top) {
+                Image(systemName: "octagon.fill").font(.title2).multilineTextAlignment(.trailing)
+                VStack(alignment: .leading) {
+                    Text(stop.description).font(.title2)
+                    Text(schedule.times.first!.vehicleID.description)
+                }
+                Spacer()
+            }
+        }
     }
-}
-
-#Preview {
-    StopRow()
 }

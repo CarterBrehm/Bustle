@@ -1,18 +1,26 @@
-//
-//  LabelledDivider.swift
-//  Bustle
-//
-//  Created by Carter Brehm on 8/21/23.
-//
-
 import SwiftUI
 
 struct LabelledDivider: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
 
-#Preview {
-    LabelledDivider()
+    let label: String
+    let horizontalPadding: CGFloat
+    let color: Color
+
+    init(label: String, horizontalPadding: CGFloat = 20, color: Color = .gray) {
+        self.label = label
+        self.horizontalPadding = horizontalPadding
+        self.color = color
+    }
+
+    var body: some View {
+        HStack {
+            line
+            Text(label).foregroundColor(color)
+            line
+        }
+    }
+
+    var line: some View {
+        VStack { Divider().background(color) }.padding(horizontalPadding)
+    }
 }
