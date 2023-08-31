@@ -86,33 +86,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "934B7C68-A4BC-4E95-8A0C-0A3697277E78"
+            uuid = "5420BB33-FAA8-400A-94CE-704B37ABC594"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Bustle/ContentView.swift"
+            filePath = "Networking/GenericApi.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1BAD4465-1EEA-48AB-AE36-3AF91461C813"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bustle/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "fetch(type:with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5420BB33-FAA8-400A-94CE-704B37ABC594 - 7d8413b8076757a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Bustle.GenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable, &#x3c4;_1_0: Swift.Encodable&gt;(type: &#x3c4;_1_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_1_0"
+                  moduleName = "Bustle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carter/Documents/Bustle/Networking/GenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "488">
+               </Location>
+               <Location
+                  uuid = "5420BB33-FAA8-400A-94CE-704B37ABC594 - 7d8413b8076757a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Bustle.GenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable, &#x3c4;_1_0: Swift.Encodable&gt;(type: &#x3c4;_1_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_1_0"
+                  moduleName = "Bustle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carter/Documents/Bustle/Networking/GenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "512">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

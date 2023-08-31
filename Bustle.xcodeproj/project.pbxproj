@@ -20,7 +20,12 @@
 		AD8F707F2A992EA700356CBD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F707E2A992EA700356CBD /* ViewModel.swift */; };
 		AD8F70812A9940E700356CBD /* RouteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F70802A9940E700356CBD /* RouteRow.swift */; };
 		AD8F70832A9940FF00356CBD /* BusCountIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F70822A9940FF00356CBD /* BusCountIcon.swift */; };
+		AD900F632A9E98970064BCAF /* RoutePreviewText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD900F622A9E98970064BCAF /* RoutePreviewText.swift */; };
 		AD9872C62A97A9040046C8A4 /* BusCountIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9872C52A97A9040046C8A4 /* BusCountIcon.swift */; };
+		ADC9077D2A9D5BF6002BB3B7 /* StopRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9077C2A9D5BF6002BB3B7 /* StopRow.swift */; };
+		ADF19A802AA028B400EED63E /* BusMapIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF19A7F2AA028B400EED63E /* BusMapIcon.swift */; };
+		ADF19A822AA02BAB00EED63E /* RouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF19A812AA02BAB00EED63E /* RouteViewModel.swift */; };
+		ADF7C3662A9AA17C00857FCB /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7C3652A9AA17C00857FCB /* Toolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +43,12 @@
 		AD8F707E2A992EA700356CBD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AD8F70802A9940E700356CBD /* RouteRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteRow.swift; sourceTree = "<group>"; };
 		AD8F70822A9940FF00356CBD /* BusCountIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusCountIcon.swift; sourceTree = "<group>"; };
+		AD900F622A9E98970064BCAF /* RoutePreviewText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePreviewText.swift; sourceTree = "<group>"; };
 		AD9872C52A97A9040046C8A4 /* BusCountIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusCountIcon.swift; sourceTree = "<group>"; };
+		ADC9077C2A9D5BF6002BB3B7 /* StopRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopRow.swift; sourceTree = "<group>"; };
+		ADF19A7F2AA028B400EED63E /* BusMapIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMapIcon.swift; sourceTree = "<group>"; };
+		ADF19A812AA02BAB00EED63E /* RouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewModel.swift; sourceTree = "<group>"; };
+		ADF7C3652A9AA17C00857FCB /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +66,12 @@
 		AD470F812A90030E0074A3E4 = {
 			isa = PBXGroup;
 			children = (
+				ADF19A812AA02BAB00EED63E /* RouteViewModel.swift */,
+				ADF19A7F2AA028B400EED63E /* BusMapIcon.swift */,
+				ADC9077C2A9D5BF6002BB3B7 /* StopRow.swift */,
 				AD8F70822A9940FF00356CBD /* BusCountIcon.swift */,
 				AD8F70802A9940E700356CBD /* RouteRow.swift */,
+				AD900F622A9E98970064BCAF /* RoutePreviewText.swift */,
 				AD8F707E2A992EA700356CBD /* ViewModel.swift */,
 				AD9872C52A97A9040046C8A4 /* BusCountIcon.swift */,
 				AD470FA02A9015560074A3E4 /* Networking */,
@@ -80,6 +94,7 @@
 			children = (
 				AD470F8D2A90030E0074A3E4 /* BustleApp.swift */,
 				AD470F8F2A90030E0074A3E4 /* ContentView.swift */,
+				ADF7C3652A9AA17C00857FCB /* Toolbar.swift */,
 				AD470FA72A9015D00074A3E4 /* Constants.swift */,
 				AD470F912A9003110074A3E4 /* Assets.xcassets */,
 				AD470F932A9003110074A3E4 /* Bustle.entitlements */,
@@ -185,11 +200,16 @@
 				AD8F70812A9940E700356CBD /* RouteRow.swift in Sources */,
 				AD470FA62A9015800074A3E4 /* ApiError.swift in Sources */,
 				AD8F707F2A992EA700356CBD /* ViewModel.swift in Sources */,
+				ADF7C3662A9AA17C00857FCB /* Toolbar.swift in Sources */,
 				AD470FA42A9015800074A3E4 /* GenericApi.swift in Sources */,
 				AD9872C62A97A9040046C8A4 /* BusCountIcon.swift in Sources */,
 				AD470F9D2A9014310074A3E4 /* Models.swift in Sources */,
+				ADF19A802AA028B400EED63E /* BusMapIcon.swift in Sources */,
 				AD8F70832A9940FF00356CBD /* BusCountIcon.swift in Sources */,
 				AD470FA52A9015800074A3E4 /* Client.swift in Sources */,
+				ADF19A822AA02BAB00EED63E /* RouteViewModel.swift in Sources */,
+				AD900F632A9E98970064BCAF /* RoutePreviewText.swift in Sources */,
+				ADC9077D2A9D5BF6002BB3B7 /* StopRow.swift in Sources */,
 				AD470F902A90030E0074A3E4 /* ContentView.swift in Sources */,
 				AD470F8E2A90030E0074A3E4 /* BustleApp.swift in Sources */,
 				AD470FA82A9015D00074A3E4 /* Constants.swift in Sources */,

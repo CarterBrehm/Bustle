@@ -3,15 +3,16 @@ import SwiftUI
 import Polyline
 import CoreLocation
 
-struct Route : Equatable {
+class Route : Equatable, Identifiable, ObservableObject, Observable {
     
     var vehiclesOnRoute: [Vehicle] {
         return Array(Set(self.stops.flatMap{$0.times}.compactMap{$0.vehicle}))
     }
     
     static func == (lhs: Route, rhs: Route) -> Bool {
-        return lhs.routeID == rhs.routeID
+        return lhs.id == rhs.id
     }
+    
     
     // eg. "Durango Route" or "Scheduled ADA"
     let name: String
@@ -29,7 +30,7 @@ struct Route : Equatable {
     let isRunning: Bool
     
     // primary key of route array!
-    let routeID: Int
+    let id: Int
     
     // stops on the route
     let stops: [Stop]
@@ -41,26 +42,26 @@ struct Route : Equatable {
         self.enabled = route.etaTypeID == 1
         self.polyline = Polyline.init(encodedPolyline: route.encodedPolyline)
         self.isRunning = route.isRunning
-        self.routeID = route.routeID
+        self.id = route.routeID
         self.stops = route.stops.compactMap {
             let stopID = $0.addressID
             if let schedule = schedules.first(where: {$0.routeID == route.routeID && $0.stopID == stopID}) {
-                return Stop(stopID: stopID,
+                return Stop(id: stopID,
                             name: $0.description,
                             location: CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude),
                             order: $0.order,
                             times: schedule.times.compactMap {
                                 let vehicleID = $0.vehicleID
                                 let vehicle = busses.first{$0.routeID == route.routeID && $0.vehicleID == vehicleID}!
-                                return Time(estimateTime: Date(timeIntervalSince1970: Double($0.estimateTime.components(separatedBy: CharacterSet.decimalDigits.inverted).joined())!),
+                                return Time(estimateTime: Date(timeIntervalSince1970: Double($0.estimateTime.components(separatedBy: CharacterSet.decimalDigits.inverted).joined())!/1000),
                                             isArriving: $0.isArriving,
                                             isDeparted: $0.isDeparted,
-                                            vehicle: Vehicle(groundSpeed: vehicle.groundSpeed, heading: vehicle.heading, isOnRoute: vehicle.isOnRoute, isDelayed: vehicle.isDelayed, location: CLLocationCoordinate2D(latitude: vehicle.latitude, longitude: vehicle.longitude), name: vehicle.name, vehicleID: vehicle.vehicleID)
+                                            vehicle: Vehicle(groundSpeed: vehicle.groundSpeed, heading: vehicle.heading, isOnRoute: vehicle.isOnRoute, isDelayed: vehicle.isDelayed, location: CLLocationCoordinate2D(latitude: vehicle.latitude, longitude: vehicle.longitude), name: vehicle.name, id: vehicle.vehicleID)
                                 )
                             }
                     )
             } else {
-                return Stop(stopID: stopID,
+                return Stop(id: stopID,
                             name: $0.description,
                             location: CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude),
                             order: $0.order,
@@ -71,17 +72,27 @@ struct Route : Equatable {
     }
 }
 
-struct Stop : Hashable, Equatable {
+class Stop : Hashable, Equatable, Identifiable, ObservableObject, Observable {
+    
+    init(id: Int, name: String, location: CLLocationCoordinate2D, order: Int, times: [Time]) {
+        self.id = id
+        self.name = name
+        self.location = location
+        self.order = order
+        self.times = times
+    }
+    
     static func == (lhs: Stop, rhs: Stop) -> Bool {
-        return lhs.stopID == rhs.stopID
+        return lhs.id == rhs.id
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(stopID)
+        hasher.combine(id)
     }
     
+    
     // primary key
-    let stopID: Int
+    let id: Int
     
     // sourced from line1 or description
     let name: String
@@ -96,7 +107,23 @@ struct Stop : Hashable, Equatable {
     let times: [Time]
 }
 
-struct Time : Equatable {
+class Time : Equatable, Identifiable, ObservableObject, Observable {
+    
+    init(estimateTime: Date, isArriving: Bool, isDeparted: Bool, vehicle: Vehicle) {
+        self.estimateTime = estimateTime
+        self.isArriving = isArriving
+        self.isDeparted = isDeparted
+        self.vehicle = vehicle
+    }
+    
+    static func == (lhs: Time, rhs: Time) -> Bool {
+        return lhs.vehicle == rhs.vehicle
+    }
+    
+    
+    // UUID to help us keep track of everything in the UI
+    let id = UUID()
+    
     // arrival time at the specific stop on the route
     let estimateTime: Date
     
@@ -107,14 +134,26 @@ struct Time : Equatable {
     let vehicle: Vehicle
 }
 
-struct Vehicle : Hashable, Equatable {
+class Vehicle : Hashable, Equatable, Identifiable, ObservableObject, Observable {
+    
+    init(groundSpeed: Double, heading: Int, isOnRoute: Bool, isDelayed: Bool, location: CLLocationCoordinate2D, name: String, id: Int) {
+        self.groundSpeed = groundSpeed
+        self.heading = heading
+        self.isOnRoute = isOnRoute
+        self.isDelayed = isDelayed
+        self.location = location
+        self.name = name
+        self.id = id
+    }
+    
     static func == (lhs: Vehicle, rhs: Vehicle) -> Bool {
-        return lhs.vehicleID == rhs.vehicleID
+        return lhs.id == rhs.id
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(vehicleID)
+        hasher.combine(id)
     }
+    
     
     // could be used to animate the vehicle between refreshes?
     let groundSpeed: Double
@@ -130,7 +169,7 @@ struct Vehicle : Hashable, Equatable {
     let name: String
     
     // primary key of bus
-    let vehicleID: Int
+    let id: Int
 }
 
 func hexStringToColor (hex:String) -> Color {
@@ -279,9 +318,7 @@ struct RS_Time: Codable {
     let estimateTime: String
     let isArriving, isDeparted: Bool
     let onTimeStatus: Int
-    let scheduledArrivalTime, scheduledDepartureTime, scheduledTime: JSONNull?
-    let seconds: Int
-    let text, time: String
+    let text: String
     let vehicleID: Int
 
     enum CodingKeys: String, CodingKey {
@@ -289,12 +326,7 @@ struct RS_Time: Codable {
         case isArriving = "IsArriving"
         case isDeparted = "IsDeparted"
         case onTimeStatus = "OnTimeStatus"
-        case scheduledArrivalTime = "ScheduledArrivalTime"
-        case scheduledDepartureTime = "ScheduledDepartureTime"
-        case scheduledTime = "ScheduledTime"
-        case seconds = "Seconds"
         case text = "Text"
-        case time = "Time"
         case vehicleID = "VehicleId"
     }
 }

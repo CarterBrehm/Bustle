@@ -6,6 +6,9 @@
          contextName = "GenericApi.fetch&lt;&#x3c4;_0_0&gt;(type:with:):GenericApi.swift">
          <PersistentStrings>
             <PersistentString
+               value = "String(decoding: data, as: UTF8.self)">
+            </PersistentString>
+            <PersistentString
                value = "data as NSData">
             </PersistentString>
          </PersistentStrings>

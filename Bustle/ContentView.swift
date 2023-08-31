@@ -12,6 +12,8 @@ struct ContentView: View {
     // stores all web data for the view
     @StateObject var viewModel = ViewModel()
     
+    @State private var isRotating = 0.0
+    
     // map doodads
     @State var mapCameraPosition = Constants.origin
     var mapCameraBounds = MapCameraBounds(centerCoordinateBounds: Constants.origin.region!)
@@ -19,66 +21,64 @@ struct ContentView: View {
     @Namespace var mapScope
     
     // controlling UI elements
-    @State var isRefreshing = false;
     @State var presentSheet = true
     @State var sheetDetent = PresentationDetent.medium
     
     var body: some View {
         Map(position: $mapCameraPosition, bounds: mapCameraBounds, interactionModes: .all, selection: $selectedMapFeature, scope: mapScope) {
+            UserAnnotation()
             let busses = viewModel.getVehicles()
-            ForEach(busses, id: \.vehicleID) { bus in
-                Marker(bus.name, systemImage: "bus", coordinate: bus.location)
+            ForEach(busses) { bus in
+//                Marker(bus.name, systemImage: "bus", coordinate: bus.location)
+                Annotation(bus.name, coordinate: bus.location) {
+                    BusMapIcon()
+                }
             }
             let stops = viewModel.getStops()
-            ForEach(stops, id: \.stopID) { stop in
-                Marker(stop.name, monogram: Text(Constants.stopMetadata[stop.name] ?? "??"), coordinate: stop.location)
+            ForEach(stops) { stop in
+                Marker(stop.name, monogram: Text(Constants.stopMonogram[stop.name] ?? "??"), coordinate: stop.location)
             }
             let routes = viewModel.getRoutes()
-            ForEach(routes, id: \.routeID) { route in
-                MapPolyline(coordinates: route.polyline.coordinates!, contourStyle: .straight).stroke(route.color, lineWidth: 5).strokeStyle(style: StrokeStyle(lineWidth: 5, lineCap: .butt, lineJoin: .round))
+            ForEach(routes) { route in
+                if let coordinates = route.polyline.coordinates {
+                    MapPolyline(coordinates: coordinates, contourStyle: .straight).stroke(route.color, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round, dash: [5,10]))
+                }
             }
-        }.task {
-            isRefreshing = true
-            await viewModel.fetch()
-            debugPrint(viewModel.routes)
-            isRefreshing = false
-        }
-        .mapControls{
-            MapUserLocationButton(scope: mapScope).padding(.all)
+        }.mapControls {
+            MapUserLocationButton(scope: mapScope)
+            MapCompass(scope: mapScope)
+            MapPitchToggle(scope: mapScope)
+            MapScaleView(scope:mapScope)
         }
         .mapStyle(MapStyle.standard(elevation: .realistic, pointsOfInterest: .excludingAll))
         .sheet(isPresented: $presentSheet) {
-            VStack{
-                HStack(alignment: .firstTextBaseline) {
-                    Text("Bustle").font(.largeTitle).bold().frame(maxWidth: .infinity, alignment: .leading).padding([.leading, .top, .trailing])
+            NavigationStack {
+                VStack {
+                    List(viewModel.getRoutes()) { route in
+                        NavigationLink(destination: Text(route.name)) {
+                            RouteRow(route: route).environment(route)
+                        }.listRowSeparator(.hidden)
+                    }
+                }.navigationTitle("Routes").listStyle(.plain).navigationBarTitleDisplayMode(.inline).toolbar() {
                     Button {
                         Task {
-                            isRefreshing = true
                             await viewModel.fetch()
-                            isRefreshing = false
                         }
                     } label: {
-                        if isRefreshing {
-                            Image(systemName: "clock.arrow.circlepath").padding([ .trailing]).font(.title3)
+                        if viewModel.isRefreshing {
+                            ProgressView().progressViewStyle(.circular)
                         } else {
-                            Image(systemName: "arrow.counterclockwise").padding([ .trailing]).font(.title3)
+                            Image(systemName: "arrow.counterclockwise")
                         }
                     }
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "gear").padding([ .trailing]).font(.title3)
-                    }
+//                    Button {
+//                                            
+//                    } label: {
+//                        Image(systemName: "gear")
+//                    }
                 }
-                ScrollView(showsIndicators: false) {
-                    VStack {
-                        ForEach(viewModel.getRoutes(), id: \.routeID) { route in
-                            RouteRow(route: route).padding([.trailing, .leading])
-                        }
-                    }
-                }
-            }.padding(.bottom)
-            .presentationDetents([.fraction(0.09), .medium, .large], selection: $sheetDetent)
+            }
+            .presentationDetents([.fraction(0.07), .medium, .large], selection: $sheetDetent)
             .interactiveDismissDisabled()
             .presentationBackgroundInteraction(.enabled)
 
@@ -86,6 +86,7 @@ struct ContentView: View {
 
     }
 }
+
 
 #Preview {
     ContentView()
