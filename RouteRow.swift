@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RouteRow: View {
-    @EnvironmentObject var route: Route
+    @Binding var route: Route
     var body: some View {
         VStack(alignment: .leading) {
             HStack {

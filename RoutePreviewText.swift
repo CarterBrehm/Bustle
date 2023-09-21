@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StopPreviewText: View {
-    @EnvironmentObject var stop: Stop
+    @Binding var stop: Stop
     var body: some View {
         if let time = stop.times.first {
             if (time.isArriving) {

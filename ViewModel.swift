@@ -97,7 +97,7 @@ class ViewModel: ObservableObject {
     }
     
     func getStops() -> [Stop] {
-        return Array(Set(self.routes.flatMap{$0.stops}))
+        return Array(Set(self.getRoutes().flatMap{$0.stops}))
     }
     
     func getRoutes() -> [Route] {

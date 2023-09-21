@@ -10,7 +10,7 @@ import MapKit
 
 struct ContentView: View {
     // stores all web data for the view
-    @StateObject var viewModel = ViewModel()
+    @ObservedObject var viewModel = ViewModel()
     
     // map doodads
     @State var mapCameraPosition = Constants.origin
@@ -19,45 +19,17 @@ struct ContentView: View {
     
     // controlling UI elements
     @State var presentSheet = true
-    @State var sheetDetent = PresentationDetent.medium
+    @State var sheetDetent = PresentationDetent.fraction(0.4)
+    @State private var detentHeight: CGFloat = .zero
+
     
     var body: some View {
         TopMapView(mapCameraPosition: $mapCameraPosition, mapCameraBounds: mapCameraBounds, selectedMapFeature: $selectedMapFeature, busses: viewModel.getVehicles(), stops: viewModel.getStops(), routes: viewModel.getRoutes())
         .sheet(isPresented: $presentSheet) {
             NavigationStack {
-                List(viewModel.getRoutes()) { route in
-                    NavigationLink(destination: List(route.stops) { stop in
-                        StopRow(routeColor: route.color).environment(stop).listRowSeparator(.hidden)
-                    }.navigationTitle("Stops").listStyle(.plain).navigationBarTitleDisplayMode(.inline).toolbar() {
-                        Button {
-                            Task {
-                                await viewModel.fetch()
-                            }
-                        } label: {
-                            if viewModel.isRefreshing {
-                                ProgressView().progressViewStyle(.circular)
-                            } else {
-                                Image(systemName: "arrow.counterclockwise")
-                            }
-                        }
-                    }) {
-                        RouteRow().environment(route)
-                    }.listRowSeparator(.hidden)
-                }.navigationTitle("Routes").listStyle(.plain).navigationBarTitleDisplayMode(.inline).toolbar() {
-                    Button {
-                        Task {
-                            await viewModel.fetch()
-                        }
-                    } label: {
-                        if viewModel.isRefreshing {
-                            ProgressView().progressViewStyle(.circular)
-                        } else {
-                            Image(systemName: "arrow.counterclockwise")
-                        }
-                    }
-                }
+                RouteList(viewModel: viewModel)
             }
-            .presentationDetents([.fraction(0.07), .medium, .large], selection: $sheetDetent)
+            .presentationDetents([.fraction(0.07), .fraction(0.4), .large], selection: $sheetDetent)
             .interactiveDismissDisabled()
             .presentationBackgroundInteraction(.enabled)
 
@@ -70,3 +42,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+

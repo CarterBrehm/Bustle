@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BusMapIcon: View {
     var body: some View {
-        Text("🚌").font(.title)
+        Text("🚌").font(.largeTitle)
     }
 }
 

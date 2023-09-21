@@ -27,7 +27,7 @@ struct TopMapView: View {
             }
             ForEach(stops) { stop in
                 Marker(stop.name, monogram: Text(Constants.stopMonogram[stop.name] ?? "??"), coordinate: stop.location)
-            }
+            }.annotationTitles(.hidden)
             ForEach(routes) { route in
                 if let coordinates = route.polyline.coordinates {
                     MapPolyline(coordinates: coordinates, contourStyle: .straight).stroke(route.color, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round, dash: [5,10]))

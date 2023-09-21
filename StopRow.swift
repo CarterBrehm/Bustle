@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StopRow: View {
-    @EnvironmentObject var stop: Stop
+    @Binding var stop: Stop
     var routeColor: Color
     
     var body: some View {
@@ -16,7 +16,7 @@ struct StopRow: View {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
                     Text(stop.name).font(.title).minimumScaleFactor(0.2).lineLimit(1)
-                    StopPreviewText().environment(stop)
+                    StopPreviewText(stop: $stop)
                 }
                 Spacer()
                 Image(systemName: "octagon.fill").font(.largeTitle).foregroundColor(routeColor).frame(width: 75.0, height: nil, alignment: .center)

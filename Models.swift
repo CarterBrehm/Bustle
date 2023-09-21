@@ -3,7 +3,11 @@ import SwiftUI
 import Polyline
 import CoreLocation
 
-class Route : Equatable, Identifiable, ObservableObject, Observable {
+struct Route : Equatable, Identifiable, Hashable {
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
     
     var vehiclesOnRoute: [Vehicle] {
         return Array(Set(self.stops.flatMap{$0.times}.compactMap{$0.vehicle}))
@@ -72,7 +76,11 @@ class Route : Equatable, Identifiable, ObservableObject, Observable {
     }
 }
 
-class Stop : Hashable, Equatable, Identifiable, ObservableObject, Observable {
+struct Stop : Hashable, Equatable, Identifiable {
+    
+    func findNextArrival(arrivingInNextSeconds: Int = Int.max) -> Time? {
+        return times.sorted(by: {$0.estimateTime < $1.estimateTime}).first(where: {Int($0.estimateTime.timeIntervalSinceNow) < arrivingInNextSeconds})
+    }
     
     init(id: Int, name: String, location: CLLocationCoordinate2D, order: Int, times: [Time]) {
         self.id = id
@@ -107,7 +115,7 @@ class Stop : Hashable, Equatable, Identifiable, ObservableObject, Observable {
     let times: [Time]
 }
 
-class Time : Equatable, Identifiable, ObservableObject, Observable {
+struct Time : Equatable, Identifiable {
     
     init(estimateTime: Date, isArriving: Bool, isDeparted: Bool, vehicle: Vehicle) {
         self.estimateTime = estimateTime
@@ -134,7 +142,7 @@ class Time : Equatable, Identifiable, ObservableObject, Observable {
     let vehicle: Vehicle
 }
 
-class Vehicle : Hashable, Equatable, Identifiable, ObservableObject, Observable {
+class Vehicle : Hashable, Equatable, Identifiable {
     
     init(groundSpeed: Double, heading: Int, isOnRoute: Bool, isDelayed: Bool, location: CLLocationCoordinate2D, name: String, id: Int) {
         self.groundSpeed = groundSpeed
@@ -243,7 +251,7 @@ struct RS_Route: Codable {
 }
 
 // MARK: - Stop
-struct RS_Stop: Codable, Equatable, Hashable {
+struct RS_Stop: Codable, Equatable {
     let addressID: Int
     let latitude: Double
     let longitude: Double
@@ -263,10 +271,6 @@ struct RS_Stop: Codable, Equatable, Hashable {
     
     public static func == (lhs: RS_Stop, rhs: RS_Stop) -> Bool {
         return lhs.addressID == rhs.addressID
-    }
-
-    public var hashValue: Int {
-        return self.addressID
     }
 }
 
@@ -335,14 +339,10 @@ typealias RS_Schedules = [RS_Schedule]
 
 // MARK: - Encode/decode helpers
 
-class JSONNull: Codable, Hashable {
+class JSONNull: Codable {
 
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
         return true
-    }
-
-    public var hashValue: Int {
-        return 0
     }
 
     public init() {}
