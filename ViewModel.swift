@@ -101,6 +101,6 @@ class ViewModel: ObservableObject {
     }
     
     func getRoutes() -> [Route] {
-        return routes.filter{$0.enabled}.sorted{$0.vehiclesOnRoute.count > $1.vehiclesOnRoute.count}
+        return routes.filter{$0.enabled && $0.vehiclesOnRoute.count > 0}.sorted{$0.vehiclesOnRoute.count > $1.vehiclesOnRoute.count}
     }
 }
