@@ -47,6 +47,7 @@
 		AD470FA72A9015D00074A3E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AD5FB3472ABA860800987E56 /* StopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetailView.swift; sourceTree = "<group>"; };
 		AD5FB3492ABA87AA00987E56 /* ScheduledStopDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledStopDescription.swift; sourceTree = "<group>"; };
+		AD72BAB62ACC77EA00C83FEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AD8F707E2A992EA700356CBD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		ADEA10C62ABA52B2005327F6 /* RouteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRow.swift; sourceTree = "<group>"; };
 		ADEA10CA2ABA569D005327F6 /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		AD470F8C2A90030E0074A3E4 /* Bustle */ = {
 			isa = PBXGroup;
 			children = (
+				AD72BAB62ACC77EA00C83FEE /* Info.plist */,
 				ADEA10CE2ABA5A21005327F6 /* BusCountIcon.swift */,
 				ADEA10CC2ABA56C3005327F6 /* RefreshIcon.swift */,
 				AD470F8D2A90030E0074A3E4 /* BustleApp.swift */,
@@ -365,6 +367,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Bustle/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Bustle;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -408,6 +411,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Bustle/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Bustle;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
