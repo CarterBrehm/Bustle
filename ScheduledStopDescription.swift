@@ -15,7 +15,7 @@ struct ScheduledStopDescription: View {
         let arrow: String = " → "
         let vehicleNumber: String = time.vehicle.name.components(separatedBy: " ").last ?? "999"
         let stoppedAsOf = " (as of "
-        let rhombus = Image(systemName: "rhombus")
+        let rhombus = Image(systemName: "octagon.fill")
         let ago = " ago)"
         let parIn = " (in "
         let parOut = ")"
