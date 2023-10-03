@@ -23,9 +23,9 @@ struct RouteDetailView: View {
             .toolbar() {
                 RefreshButton(viewModel: viewModel)
             }
-            .navigationDestination(for: Stop.self, destination: { stop in
-                StopDetailView(stop: stop)
-            })
+//            .navigationDestination(for: Stop.self, destination: { stop in
+//                StopDetailView(stop: stop)
+//            })
     }
 }
 
