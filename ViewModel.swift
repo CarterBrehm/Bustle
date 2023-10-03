@@ -100,7 +100,11 @@ class ViewModel: ObservableObject {
         return Array(Set(self.getRoutes().flatMap{$0.stops}))
     }
     
-    func getRoutes() -> [Route] {
+    func getActiveRoutes() -> [Route] {
         return routes.filter{$0.enabled && $0.vehiclesOnRoute.count > 0}.sorted{$0.vehiclesOnRoute.count > $1.vehiclesOnRoute.count}
+    }
+    
+    func getRoutes() -> [Route] {
+        return routes.filter{$0.enabled}.sorted{$0.vehiclesOnRoute.count > $1.vehiclesOnRoute.count}
     }
 }

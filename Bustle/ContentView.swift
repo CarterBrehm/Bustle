@@ -16,6 +16,7 @@ struct ContentView: View {
     @State var mapCameraPosition = Constants.origin
     var mapCameraBounds = MapCameraBounds(centerCoordinateBounds: Constants.origin.region!)
     @State var selectedMapFeature: MapFeature?
+    let locationManager = CLLocationManager()
     
     // controlling UI elements
     @State var presentSheet = true
@@ -24,7 +25,10 @@ struct ContentView: View {
 
     
     var body: some View {
-        TopMapView(mapCameraPosition: $mapCameraPosition, mapCameraBounds: mapCameraBounds, selectedMapFeature: $selectedMapFeature, busses: viewModel.getVehicles(), stops: viewModel.getStops(), routes: viewModel.getRoutes())
+        TopMapView(mapCameraPosition: $mapCameraPosition, mapCameraBounds: mapCameraBounds, selectedMapFeature: $selectedMapFeature, busses: viewModel.getVehicles(), stops: viewModel.getStops(), routes: viewModel.getActiveRoutes())
+            .onAppear {
+                locationManager.requestWhenInUseAuthorization()
+            }
         .sheet(isPresented: $presentSheet) {
             NavigationStack {
                 RouteList(viewModel: viewModel)
