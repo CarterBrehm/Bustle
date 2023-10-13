@@ -5,18 +5,12 @@ import CoreLocation
 
 struct Route : Equatable, Identifiable, Hashable {
     
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    var vehiclesOnRoute: [Vehicle] {
-        return Array(Set(self.stops.flatMap{$0.times}.compactMap{$0.vehicle}))
-    }
-    
     static func == (lhs: Route, rhs: Route) -> Bool {
         return lhs.id == rhs.id
     }
-    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
     
     // eg. "Durango Route" or "Scheduled ADA"
     let name: String
@@ -38,69 +32,21 @@ struct Route : Equatable, Identifiable, Hashable {
     
     // stops on the route
     let stops: [Stop]
-    
-    // pass everything in and get our fancy new route structure
-    init(route: RS_Route, busses: RS_Vehicles, schedules: RS_Schedules) {
-        self.name = route.description
-        self.color = hexStringToColor(hex: route.mapLineColor)
-        self.enabled = route.etaTypeID == 1
-        self.polyline = Polyline.init(encodedPolyline: route.encodedPolyline)
-        self.isRunning = route.isRunning
-        self.id = route.routeID
-        self.stops = route.stops.compactMap {
-            let stopID = $0.addressID
-            if let schedule = schedules.first(where: {$0.routeID == route.routeID && $0.stopID == stopID}) {
-                return Stop(id: stopID,
-                            name: $0.description,
-                            location: CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude),
-                            order: $0.order,
-                            times: schedule.times.compactMap {
-                                let vehicleID = $0.vehicleID
-                                let vehicle = busses.first{$0.routeID == route.routeID && $0.vehicleID == vehicleID}!
-                                return Time(estimateTime: Date(timeIntervalSince1970: Double($0.estimateTime.components(separatedBy: CharacterSet.decimalDigits.inverted).joined())!/1000),
-                                            isArriving: $0.isArriving,
-                                            isDeparted: $0.isDeparted,
-                                            vehicle: Vehicle(groundSpeed: vehicle.groundSpeed, heading: vehicle.heading, isOnRoute: vehicle.isOnRoute, isDelayed: vehicle.isDelayed, location: CLLocationCoordinate2D(latitude: vehicle.latitude, longitude: vehicle.longitude), name: vehicle.name, id: vehicle.vehicleID)
-                                )
-                            }
-                    )
-            } else {
-                return Stop(id: stopID,
-                            name: $0.description,
-                            location: CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude),
-                            order: $0.order,
-                            times: [Time]()
-                    )
-            }
-        }
-    }
 }
 
 struct Stop : Hashable, Equatable, Identifiable {
-    
-    func findNextArrival(arrivingInNextSeconds: Int = Int.max) -> Time? {
-        return times.sorted(by: {$0.estimateTime < $1.estimateTime}).first(where: {Int($0.estimateTime.timeIntervalSinceNow) < arrivingInNextSeconds})
-    }
-    
-    init(id: Int, name: String, location: CLLocationCoordinate2D, order: Int, times: [Time]) {
-        self.id = id
-        self.name = name
-        self.location = location
-        self.order = order
-        self.times = times
-    }
-    
     static func == (lhs: Stop, rhs: Stop) -> Bool {
         return lhs.id == rhs.id
     }
-    
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
     
-    
     // primary key
     let id: Int
+    
+    // uniquely identifies address, could be useful to show which stops are the same?
+    let addressId: Int
     
     // sourced from line1 or description
     let name: String
@@ -111,23 +57,11 @@ struct Stop : Hashable, Equatable, Identifiable {
     // we may need this? keeping it for now
     let order: Int
     
-    // all arrival times associated with the stop
+    // times (will be filtered by bus)
     let times: [Time]
 }
 
 struct Time : Equatable, Identifiable {
-    
-    init(estimateTime: Date, isArriving: Bool, isDeparted: Bool, vehicle: Vehicle) {
-        self.estimateTime = estimateTime
-        self.isArriving = isArriving
-        self.isDeparted = isDeparted
-        self.vehicle = vehicle
-    }
-    
-    static func == (lhs: Time, rhs: Time) -> Bool {
-        return lhs.vehicle == rhs.vehicle
-    }
-    
     
     // UUID to help us keep track of everything in the UI
     let id = UUID()
@@ -137,23 +71,10 @@ struct Time : Equatable, Identifiable {
     
     // bools that set bus behavior, we'll have to test these to see how accurate they are
     let isArriving, isDeparted: Bool
-    
-    // the vehicle that will be arriving
-    let vehicle: Vehicle
+
 }
 
-class Vehicle : Hashable, Equatable, Identifiable {
-    
-    init(groundSpeed: Double, heading: Int, isOnRoute: Bool, isDelayed: Bool, location: CLLocationCoordinate2D, name: String, id: Int) {
-        self.groundSpeed = groundSpeed
-        self.heading = heading
-        self.isOnRoute = isOnRoute
-        self.isDelayed = isDelayed
-        self.location = location
-        self.name = name
-        self.id = id
-    }
-    
+struct Vehicle : Hashable, Equatable, Identifiable {
     static func == (lhs: Vehicle, rhs: Vehicle) -> Bool {
         return lhs.id == rhs.id
     }
@@ -178,6 +99,9 @@ class Vehicle : Hashable, Equatable, Identifiable {
     
     // primary key of bus
     let id: Int
+    
+    // route that this bus is currently traveling on (could be none, for ADA bus)
+    let route: Route
 }
 
 func hexStringToColor (hex:String) -> Color {

@@ -39,6 +39,6 @@ struct TopMapView: View {
             MapPitchToggle(scope: mapScope)
             MapScaleView(scope:mapScope)
         }
-        .mapStyle(MapStyle.standard(elevation: .realistic, pointsOfInterest: .excludingAll))
+        .mapStyle(MapStyle.hybrid(elevation: .realistic, pointsOfInterest: .excludingAll, showsTraffic: true))
     }
 }

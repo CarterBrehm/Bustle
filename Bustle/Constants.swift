@@ -9,8 +9,9 @@ import Foundation
 import _MapKit_SwiftUI
 
 struct Constants {
-    static let origin =  MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 41.2426841, longitude: -96.0106684), span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)))
-    static let baseUrl = "https://unomaha.ridesystems.net/Services/JSONPRelay.svc/"
+    static let origin =  MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 41.2436841, longitude: -96.0106684), span: MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025)))
+    static let baseUrl = "https://dl.carters.cloud/"
+//    static let baseUrl = "https://unomaha.ridesystems.net/Services/JSONPRelay.svc/"
     static let stopMonogram = ["Scott Crossing": "SX",
                                "Scott Hall": "SH",
                                "Scott Court": "SC",
