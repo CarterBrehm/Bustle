@@ -25,19 +25,20 @@ struct ContentView: View {
 
     
     var body: some View {
-//        TopMapView(mapCameraPosition: $mapCameraPosition, mapCameraBounds: mapCameraBounds, selectedMapFeature: $selectedMapFeature, busses: viewModel.getVehicles(), stops: viewModel.getStops(), routes: viewModel.getActiveRoutes())
-//            .onAppear {
-//                locationManager.requestWhenInUseAuthorization()
-//            }
-//        .sheet(isPresented: $presentSheet) {
-//            NavigationStack {
-//                RouteList(viewModel: viewModel)
-//            }
-//            .presentationDetents([.fraction(0.07), .fraction(0.4), .large], selection: $sheetDetent)
-//            .interactiveDismissDisabled()
-//            .presentationBackgroundInteraction(.enabled)
-//
-//        }
+        TopMapView(mapCameraPosition: $mapCameraPosition, mapCameraBounds: mapCameraBounds, selectedMapFeature: $selectedMapFeature, busses: viewModel.getVehicles(), stops: viewModel.getStops(), routes: viewModel.getActiveRoutes())
+            .onAppear {
+                locationManager.requestWhenInUseAuthorization()
+            }
+        .sheet(isPresented: $presentSheet) {
+            NavigationStack {
+                RouteList(viewModel: viewModel)
+            }
+            .presentationDetents([.fraction(0.07), .fraction(0.4), .large], selection: $sheetDetent)
+            .interactiveDismissDisabled()
+            .presentationBackgroundInteraction(.enabled)
+
+        }
+
     }
 }
 

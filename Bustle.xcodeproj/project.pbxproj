@@ -18,11 +18,16 @@
 		AD470FA62A9015800074A3E4 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD470FA32A9015800074A3E4 /* ApiError.swift */; };
 		AD470FA82A9015D00074A3E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD470FA72A9015D00074A3E4 /* Constants.swift */; };
 		AD5FB3482ABA860800987E56 /* StopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5FB3472ABA860800987E56 /* StopDetailView.swift */; };
+		AD5FB34A2ABA87AA00987E56 /* ScheduledStopDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5FB3492ABA87AA00987E56 /* ScheduledStopDescription.swift */; };
 		AD8F707D2A991EDD00356CBD /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = AD8F707C2A991EDD00356CBD /* Polyline */; };
 		AD8F707F2A992EA700356CBD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F707E2A992EA700356CBD /* ViewModel.swift */; };
+		ADEA10C72ABA52B2005327F6 /* RouteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEA10C62ABA52B2005327F6 /* RouteRow.swift */; };
 		ADEA10CB2ABA569D005327F6 /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEA10CA2ABA569D005327F6 /* RefreshButton.swift */; };
 		ADEA10CD2ABA56C3005327F6 /* RefreshIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEA10CC2ABA56C3005327F6 /* RefreshIcon.swift */; };
 		ADEA10CF2ABA5A21005327F6 /* BusCountIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEA10CE2ABA5A21005327F6 /* BusCountIcon.swift */; };
+		ADEA10D12ABA5DE1005327F6 /* RouteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEA10D02ABA5DE1005327F6 /* RouteDetailView.swift */; };
+		ADEA10D32ABA5EBD005327F6 /* StopRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEA10D22ABA5EBD005327F6 /* StopRow.swift */; };
+		ADEA10D72ABA6868005327F6 /* RouteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEA10D62ABA6868005327F6 /* RouteList.swift */; };
 		ADF19A802AA028B400EED63E /* BusMapIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF19A7F2AA028B400EED63E /* BusMapIcon.swift */; };
 		ADF7C3662A9AA17C00857FCB /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7C3652A9AA17C00857FCB /* Toolbar.swift */; };
 /* End PBXBuildFile section */
@@ -41,11 +46,16 @@
 		AD470FA32A9015800074A3E4 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		AD470FA72A9015D00074A3E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AD5FB3472ABA860800987E56 /* StopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetailView.swift; sourceTree = "<group>"; };
+		AD5FB3492ABA87AA00987E56 /* ScheduledStopDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledStopDescription.swift; sourceTree = "<group>"; };
 		AD72BAB62ACC77EA00C83FEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AD8F707E2A992EA700356CBD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		ADEA10C62ABA52B2005327F6 /* RouteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRow.swift; sourceTree = "<group>"; };
 		ADEA10CA2ABA569D005327F6 /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
 		ADEA10CC2ABA56C3005327F6 /* RefreshIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshIcon.swift; sourceTree = "<group>"; };
 		ADEA10CE2ABA5A21005327F6 /* BusCountIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusCountIcon.swift; sourceTree = SOURCE_ROOT; };
+		ADEA10D02ABA5DE1005327F6 /* RouteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailView.swift; sourceTree = "<group>"; };
+		ADEA10D22ABA5EBD005327F6 /* StopRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopRow.swift; sourceTree = "<group>"; };
+		ADEA10D62ABA6868005327F6 /* RouteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteList.swift; sourceTree = "<group>"; };
 		ADF19A7F2AA028B400EED63E /* BusMapIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMapIcon.swift; sourceTree = "<group>"; };
 		ADF7C3652A9AA17C00857FCB /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,7 +75,9 @@
 		AD470F812A90030E0074A3E4 = {
 			isa = PBXGroup;
 			children = (
+				AD5FB3492ABA87AA00987E56 /* ScheduledStopDescription.swift */,
 				AD5FB3472ABA860800987E56 /* StopDetailView.swift */,
+				ADEA10D62ABA6868005327F6 /* RouteList.swift */,
 				AD08D2972AA78CE700117DDE /* TopMapView.swift */,
 				ADF19A7F2AA028B400EED63E /* BusMapIcon.swift */,
 				AD8F707E2A992EA700356CBD /* ViewModel.swift */,
@@ -93,6 +105,9 @@
 				AD470F8D2A90030E0074A3E4 /* BustleApp.swift */,
 				ADEA10CA2ABA569D005327F6 /* RefreshButton.swift */,
 				AD470F8F2A90030E0074A3E4 /* ContentView.swift */,
+				ADEA10D02ABA5DE1005327F6 /* RouteDetailView.swift */,
+				ADEA10D22ABA5EBD005327F6 /* StopRow.swift */,
+				ADEA10C62ABA52B2005327F6 /* RouteRow.swift */,
 				ADF7C3652A9AA17C00857FCB /* Toolbar.swift */,
 				AD470FA72A9015D00074A3E4 /* Constants.swift */,
 				AD470F912A9003110074A3E4 /* Assets.xcassets */,
@@ -196,6 +211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD5FB34A2ABA87AA00987E56 /* ScheduledStopDescription.swift in Sources */,
+				ADEA10C72ABA52B2005327F6 /* RouteRow.swift in Sources */,
 				AD470FA62A9015800074A3E4 /* ApiError.swift in Sources */,
 				AD8F707F2A992EA700356CBD /* ViewModel.swift in Sources */,
 				ADF7C3662A9AA17C00857FCB /* Toolbar.swift in Sources */,
@@ -206,11 +223,14 @@
 				ADEA10CF2ABA5A21005327F6 /* BusCountIcon.swift in Sources */,
 				AD470FA52A9015800074A3E4 /* Client.swift in Sources */,
 				AD470F902A90030E0074A3E4 /* ContentView.swift in Sources */,
+				ADEA10D72ABA6868005327F6 /* RouteList.swift in Sources */,
 				AD5FB3482ABA860800987E56 /* StopDetailView.swift in Sources */,
 				ADEA10CD2ABA56C3005327F6 /* RefreshIcon.swift in Sources */,
 				ADEA10CB2ABA569D005327F6 /* RefreshButton.swift in Sources */,
+				ADEA10D12ABA5DE1005327F6 /* RouteDetailView.swift in Sources */,
 				AD470F8E2A90030E0074A3E4 /* BustleApp.swift in Sources */,
 				AD470FA82A9015D00074A3E4 /* Constants.swift in Sources */,
+				ADEA10D32ABA5EBD005327F6 /* StopRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

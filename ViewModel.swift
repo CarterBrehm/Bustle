@@ -7,7 +7,6 @@
 
 import Foundation
 import CoreLocation
-import Polyline
 
 @MainActor
 class ViewModel: ObservableObject {
@@ -22,7 +21,6 @@ class ViewModel: ObservableObject {
     
     
     @Published private(set) var routes: [Route] = []
-    @Published private(set) var vehicles: [Vehicle] = []
     @Published private(set) var orphanVehicles: [Vehicle] = []
     @Published private(set) var errorMessage: String = ""
     @Published var hasError: Bool = false
@@ -46,19 +44,19 @@ class ViewModel: ObservableObject {
     }
     
     var rs_busses_request: URLRequest = {
-        let urlString = "\(Constants.baseUrl)GetMapVehiclePoints.json"
+        let urlString = "\(Constants.baseUrl)GetMapVehiclePoints"
         let url = URL(string: urlString)!
         return URLRequest(url: url)
     }()
     
     var rs_routes_request: URLRequest = {
-        let urlString = "\(Constants.baseUrl)GetRoutesForMapWithScheduleWithEncodedLine.json"
+        let urlString = "\(Constants.baseUrl)GetRoutesForMapWithScheduleWithEncodedLine"
         let url = URL(string: urlString)!
         return URLRequest(url: url)
     }()
     
     var rs_schedules_request: URLRequest = {
-        let urlString = "\(Constants.baseUrl)GetStopArrivalTimes.json"
+        let urlString = "\(Constants.baseUrl)GetStopArrivalTimes"
         let url = URL(string: urlString)!
         return URLRequest(url: url)
     }()
@@ -80,66 +78,33 @@ class ViewModel: ObservableObject {
             hasError = true
         }
         
-        for rs_bus in rs_busses {
-            if let route = rs_routes.first(where: { $0.routeID == rs_bus.routeID }) {
-                let vehicle = Vehicle(
-                    groundSpeed: rs_bus.groundSpeed,
-                    heading: rs_bus.heading,
-                    isOnRoute: rs_bus.isOnRoute,
-                    isDelayed: rs_bus.isDelayed,
-                    location: CLLocationCoordinate2D(
-                        latitude: rs_bus.latitude,
-                        longitude: rs_bus.longitude
-                    ),
-                    name: rs_bus.name,
-                    id: rs_bus.vehicleID,
-                    route: Route(
-                        name: route.description,
-                        color: hexStringToColor(hex: route.mapLineColor),
-                        enabled: route.etaTypeID == 1,
-                        polyline: Polyline.init(encodedPolyline: route.encodedPolyline),
-                        isRunning: route.isRunning,
-                        id: route.routeID,
-                        stops: route.stops.compactMap { stop in
-                            return Stop(
-                                id: stop.routeStopID,
-                                addressId: stop.addressID,
-                                name: stop.description,
-                                location: CLLocationCoordinate2D(
-                                    latitude: stop.latitude,
-                                    longitude: stop.longitude
-                                ),
-                                order: stop.order,
-                                times: rs_schedules.filter({
-                                    $0.routeID == route.routeID && $0.routeStopID == stop.routeStopID
-                                }).compactMap({
-                                    for rs_time in $0.times {
-                                        if rs_time.vehicleID == rs_bus.vehicleID {
-                                            return Time(estimateTime: Date(timeIntervalSince1970: Double(rs_time.estimateTime.components(separatedBy: CharacterSet.decimalDigits.inverted).joined())!/1000), isArriving: rs_time.isArriving, isDeparted: rs_time.isDeparted)
-                                        }
-                                    }
-                                    return nil
-                                })
-                            )
-                        }
-                    )
-                )
-                vehicles.append(vehicle)
+        routes = []
+        orphanVehicles = []
+        for rs_route in rs_routes {
+            routes.append(Route(route: rs_route, busses: rs_busses, schedules: rs_schedules))
+        }
+        for vehicle in rs_busses {
+            if (!self.getVehicles().contains{$0.id == vehicle.vehicleID}) {
+                orphanVehicles.append(Vehicle(groundSpeed: vehicle.groundSpeed, heading: vehicle.heading, isOnRoute: vehicle.isOnRoute, isDelayed: vehicle.isDelayed, location: CLLocationCoordinate2D(latitude: vehicle.latitude, longitude: vehicle.longitude), name: vehicle.name, id: vehicle.vehicleID))
             }
         }
         isRefreshing = false
         startTimer()
     }
     
-//    func getStops() -> [Stop] {
-//        return Array(Set(self.getRoutes().flatMap{$0.stops}))
-//    }
-//
-//    func getActiveRoutes() -> [Route] {
-//        return routes.filter{$0.enabled && $0.vehiclesOnRoute.count > 0}.sorted{$0.vehiclesOnRoute.count > $1.vehiclesOnRoute.count}
-//    }
-//
-//    func getRoutes() -> [Route] {
-//        return routes.filter{$0.enabled}.sorted{$0.vehiclesOnRoute.count > $1.vehiclesOnRoute.count}
-//    }
+    func getVehicles() -> [Vehicle] {
+        return Array(Set(self.routes.flatMap{$0.stops}.flatMap{$0.times}.compactMap{$0.vehicle} + orphanVehicles))
+    }
+    
+    func getStops() -> [Stop] {
+        return Array(Set(self.getRoutes().flatMap{$0.stops}))
+    }
+    
+    func getActiveRoutes() -> [Route] {
+        return routes.filter{$0.enabled && $0.vehiclesOnRoute.count > 0}.sorted{$0.vehiclesOnRoute.count > $1.vehiclesOnRoute.count}
+    }
+    
+    func getRoutes() -> [Route] {
+        return routes.filter{$0.enabled}.sorted{$0.vehiclesOnRoute.count > $1.vehiclesOnRoute.count}
+    }
 }
