@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD92C9912B61928D00DE4DDB /* BustleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9902B61928D00DE4DDB /* BustleApp.swift */; };
+		AD92C9932B61928D00DE4DDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9922B61928D00DE4DDB /* ContentView.swift */; };
+		AD92C9952B61928F00DE4DDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD92C9942B61928F00DE4DDB /* Assets.xcassets */; };
+		AD92C9992B61928F00DE4DDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD92C9982B61928F00DE4DDB /* Preview Assets.xcassets */; };
+		AD92C9A12B61937300DE4DDB /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9A02B61937300DE4DDB /* Client.swift */; };
+		AD92C9A32B6193BC00DE4DDB /* GenericAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9A22B6193BC00DE4DDB /* GenericAPI.swift */; };
+		AD92C9A52B6193FC00DE4DDB /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9A42B6193FC00DE4DDB /* APIError.swift */; };
+		AD92C9A92B61950300DE4DDB /* RS_Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9A82B61950300DE4DDB /* RS_Time.swift */; };
+		AD92C9AB2B61952400DE4DDB /* RS_Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9AA2B61952400DE4DDB /* RS_Schedule.swift */; };
+		AD92C9AD2B61954B00DE4DDB /* RS_Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9AC2B61954B00DE4DDB /* RS_Stop.swift */; };
+		AD92C9AF2B61957200DE4DDB /* RS_Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9AE2B61957200DE4DDB /* RS_Route.swift */; };
+		AD92C9B12B61959800DE4DDB /* RS_Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9B02B61959800DE4DDB /* RS_Vehicle.swift */; };
+		AD92C9B42B61961E00DE4DDB /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9B32B61961E00DE4DDB /* Vehicle.swift */; };
+		AD92C9B62B61966500DE4DDB /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9B52B61966500DE4DDB /* Time.swift */; };
+		AD92C9B82B61969600DE4DDB /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9B72B61969600DE4DDB /* Stop.swift */; };
+		AD92C9BA2B6197C200DE4DDB /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9B92B6197C200DE4DDB /* Route.swift */; };
+		AD92C9BD2B61984000DE4DDB /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = AD92C9BC2B61984000DE4DDB /* Polyline */; };
+		AD92C9C22B619A0500DE4DDB /* GetStopArrivalTimes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD92C9BF2B619A0500DE4DDB /* GetStopArrivalTimes.json */; };
+		AD92C9C32B619A0500DE4DDB /* GetMapVehiclePoints.json in Resources */ = {isa = PBXBuildFile; fileRef = AD92C9C02B619A0500DE4DDB /* GetMapVehiclePoints.json */; };
+		AD92C9C42B619A0500DE4DDB /* GetRoutesForMapWithScheduleWithEncodedLine.json in Resources */ = {isa = PBXBuildFile; fileRef = AD92C9C12B619A0500DE4DDB /* GetRoutesForMapWithScheduleWithEncodedLine.json */; };
+		AD92C9C92B61CEFA00DE4DDB /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9C82B61CEFA00DE4DDB /* Fetcher.swift */; };
+		AD92C9CC2B620F0900DE4DDB /* HexStringToColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9CB2B620F0900DE4DDB /* HexStringToColor.swift */; };
+		AD92C9CF2B62191500DE4DDB /* BusMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9CE2B62191500DE4DDB /* BusMap.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AD92C98D2B61928D00DE4DDB /* Bustle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bustle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD92C9902B61928D00DE4DDB /* BustleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BustleApp.swift; sourceTree = "<group>"; };
+		AD92C9922B61928D00DE4DDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AD92C9942B61928F00DE4DDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD92C9962B61928F00DE4DDB /* Bustle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bustle.entitlements; sourceTree = "<group>"; };
+		AD92C9982B61928F00DE4DDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AD92C9A02B61937300DE4DDB /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		AD92C9A22B6193BC00DE4DDB /* GenericAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAPI.swift; sourceTree = "<group>"; };
+		AD92C9A42B6193FC00DE4DDB /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		AD92C9A82B61950300DE4DDB /* RS_Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RS_Time.swift; sourceTree = "<group>"; };
+		AD92C9AA2B61952400DE4DDB /* RS_Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RS_Schedule.swift; sourceTree = "<group>"; };
+		AD92C9AC2B61954B00DE4DDB /* RS_Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RS_Stop.swift; sourceTree = "<group>"; };
+		AD92C9AE2B61957200DE4DDB /* RS_Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RS_Route.swift; sourceTree = "<group>"; };
+		AD92C9B02B61959800DE4DDB /* RS_Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RS_Vehicle.swift; sourceTree = "<group>"; };
+		AD92C9B32B61961E00DE4DDB /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		AD92C9B52B61966500DE4DDB /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		AD92C9B72B61969600DE4DDB /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		AD92C9B92B6197C200DE4DDB /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		AD92C9BF2B619A0500DE4DDB /* GetStopArrivalTimes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetStopArrivalTimes.json; sourceTree = "<group>"; };
+		AD92C9C02B619A0500DE4DDB /* GetMapVehiclePoints.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetMapVehiclePoints.json; sourceTree = "<group>"; };
+		AD92C9C12B619A0500DE4DDB /* GetRoutesForMapWithScheduleWithEncodedLine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetRoutesForMapWithScheduleWithEncodedLine.json; sourceTree = "<group>"; };
+		AD92C9C82B61CEFA00DE4DDB /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
+		AD92C9CB2B620F0900DE4DDB /* HexStringToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexStringToColor.swift; sourceTree = "<group>"; };
+		AD92C9CE2B62191500DE4DDB /* BusMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMap.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD92C98A2B61928D00DE4DDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD92C9BD2B61984000DE4DDB /* Polyline in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD92C9842B61928D00DE4DDB = {
+			isa = PBXGroup;
+			children = (
+				AD92C9CD2B6218B700DE4DDB /* Views */,
+				AD92C9CA2B620EDD00DE4DDB /* Helpers */,
+				AD92C9BE2B6199BC00DE4DDB /* Mock */,
+				AD92C9A62B61948900DE4DDB /* Types */,
+				AD92C99F2B61936600DE4DDB /* Networking */,
+				AD92C9902B61928D00DE4DDB /* BustleApp.swift */,
+				AD92C9922B61928D00DE4DDB /* ContentView.swift */,
+				AD92C9942B61928F00DE4DDB /* Assets.xcassets */,
+				AD92C9962B61928F00DE4DDB /* Bustle.entitlements */,
+				AD92C9972B61928F00DE4DDB /* Preview Content */,
+				AD92C98F2B61928D00DE4DDB /* Bustle */,
+				AD92C98E2B61928D00DE4DDB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD92C98E2B61928D00DE4DDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD92C98D2B61928D00DE4DDB /* Bustle.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD92C98F2B61928D00DE4DDB /* Bustle */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Bustle;
+			sourceTree = "<group>";
+		};
+		AD92C9972B61928F00DE4DDB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AD92C9982B61928F00DE4DDB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AD92C99F2B61936600DE4DDB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AD92C9A02B61937300DE4DDB /* Client.swift */,
+				AD92C9A22B6193BC00DE4DDB /* GenericAPI.swift */,
+				AD92C9A42B6193FC00DE4DDB /* APIError.swift */,
+				AD92C9C82B61CEFA00DE4DDB /* Fetcher.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		AD92C9A62B61948900DE4DDB /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				AD92C9B22B61960D00DE4DDB /* Internal */,
+				AD92C9A72B61948D00DE4DDB /* Ridesystems */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		AD92C9A72B61948D00DE4DDB /* Ridesystems */ = {
+			isa = PBXGroup;
+			children = (
+				AD92C9A82B61950300DE4DDB /* RS_Time.swift */,
+				AD92C9AA2B61952400DE4DDB /* RS_Schedule.swift */,
+				AD92C9AC2B61954B00DE4DDB /* RS_Stop.swift */,
+				AD92C9AE2B61957200DE4DDB /* RS_Route.swift */,
+				AD92C9B02B61959800DE4DDB /* RS_Vehicle.swift */,
+			);
+			path = Ridesystems;
+			sourceTree = "<group>";
+		};
+		AD92C9B22B61960D00DE4DDB /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				AD92C9B32B61961E00DE4DDB /* Vehicle.swift */,
+				AD92C9B52B61966500DE4DDB /* Time.swift */,
+				AD92C9B72B61969600DE4DDB /* Stop.swift */,
+				AD92C9B92B6197C200DE4DDB /* Route.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		AD92C9BE2B6199BC00DE4DDB /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				AD92C9C02B619A0500DE4DDB /* GetMapVehiclePoints.json */,
+				AD92C9C12B619A0500DE4DDB /* GetRoutesForMapWithScheduleWithEncodedLine.json */,
+				AD92C9BF2B619A0500DE4DDB /* GetStopArrivalTimes.json */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		AD92C9CA2B620EDD00DE4DDB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AD92C9CB2B620F0900DE4DDB /* HexStringToColor.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AD92C9CD2B6218B700DE4DDB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD92C9CE2B62191500DE4DDB /* BusMap.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD92C98C2B61928D00DE4DDB /* Bustle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD92C99C2B61928F00DE4DDB /* Build configuration list for PBXNativeTarget "Bustle" */;
+			buildPhases = (
+				AD92C9892B61928D00DE4DDB /* Sources */,
+				AD92C98A2B61928D00DE4DDB /* Frameworks */,
+				AD92C98B2B61928D00DE4DDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bustle;
+			packageProductDependencies = (
+				AD92C9BC2B61984000DE4DDB /* Polyline */,
+			);
+			productName = Bustle;
+			productReference = AD92C98D2B61928D00DE4DDB /* Bustle.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD92C9852B61928D00DE4DDB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					AD92C98C2B61928D00DE4DDB = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = AD92C9882B61928D00DE4DDB /* Build configuration list for PBXProject "Bustle" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD92C9842B61928D00DE4DDB;
+			packageReferences = (
+				AD92C9BB2B61984000DE4DDB /* XCRemoteSwiftPackageReference "Polyline" */,
+			);
+			productRefGroup = AD92C98E2B61928D00DE4DDB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD92C98C2B61928D00DE4DDB /* Bustle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD92C98B2B61928D00DE4DDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD92C9992B61928F00DE4DDB /* Preview Assets.xcassets in Resources */,
+				AD92C9952B61928F00DE4DDB /* Assets.xcassets in Resources */,
+				AD92C9C22B619A0500DE4DDB /* GetStopArrivalTimes.json in Resources */,
+				AD92C9C32B619A0500DE4DDB /* GetMapVehiclePoints.json in Resources */,
+				AD92C9C42B619A0500DE4DDB /* GetRoutesForMapWithScheduleWithEncodedLine.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD92C9892B61928D00DE4DDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD92C9B62B61966500DE4DDB /* Time.swift in Sources */,
+				AD92C9932B61928D00DE4DDB /* ContentView.swift in Sources */,
+				AD92C9AF2B61957200DE4DDB /* RS_Route.swift in Sources */,
+				AD92C9A92B61950300DE4DDB /* RS_Time.swift in Sources */,
+				AD92C9AD2B61954B00DE4DDB /* RS_Stop.swift in Sources */,
+				AD92C9BA2B6197C200DE4DDB /* Route.swift in Sources */,
+				AD92C9AB2B61952400DE4DDB /* RS_Schedule.swift in Sources */,
+				AD92C9912B61928D00DE4DDB /* BustleApp.swift in Sources */,
+				AD92C9A32B6193BC00DE4DDB /* GenericAPI.swift in Sources */,
+				AD92C9C92B61CEFA00DE4DDB /* Fetcher.swift in Sources */,
+				AD92C9B82B61969600DE4DDB /* Stop.swift in Sources */,
+				AD92C9A52B6193FC00DE4DDB /* APIError.swift in Sources */,
+				AD92C9B42B61961E00DE4DDB /* Vehicle.swift in Sources */,
+				AD92C9CF2B62191500DE4DDB /* BusMap.swift in Sources */,
+				AD92C9A12B61937300DE4DDB /* Client.swift in Sources */,
+				AD92C9B12B61959800DE4DDB /* RS_Vehicle.swift in Sources */,
+				AD92C9CC2B620F0900DE4DDB /* HexStringToColor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AD92C99A2B61928F00DE4DDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD92C99B2B61928F00DE4DDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		AD92C99D2B61928F00DE4DDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Bustle/Bustle.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Bustle/Preview Content\"";
+				DEVELOPMENT_TEAM = DASQ93PW85;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brehmit.Bustle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD92C99E2B61928F00DE4DDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Bustle/Bustle.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Bustle/Preview Content\"";
+				DEVELOPMENT_TEAM = DASQ93PW85;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brehmit.Bustle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD92C9882B61928D00DE4DDB /* Build configuration list for PBXProject "Bustle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD92C99A2B61928F00DE4DDB /* Debug */,
+				AD92C99B2B61928F00DE4DDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD92C99C2B61928F00DE4DDB /* Build configuration list for PBXNativeTarget "Bustle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD92C99D2B61928F00DE4DDB /* Debug */,
+				AD92C99E2B61928F00DE4DDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD92C9BB2B61984000DE4DDB /* XCRemoteSwiftPackageReference "Polyline" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raphaelmor/Polyline.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD92C9BC2B61984000DE4DDB /* Polyline */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD92C9BB2B61984000DE4DDB /* XCRemoteSwiftPackageReference "Polyline" */;
+			productName = Polyline;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = AD92C9852B61928D00DE4DDB /* Project object */;
+}
