@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct BustleApp: App {
-    @StateObject private var fetcher = Fetcher(mock: true)
+    @StateObject private var fetcher = Fetcher(mock: false)
     
     var body: some Scene {
         WindowGroup {

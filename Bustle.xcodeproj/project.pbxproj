@@ -10,7 +10,6 @@
 		AD92C9912B61928D00DE4DDB /* BustleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9902B61928D00DE4DDB /* BustleApp.swift */; };
 		AD92C9932B61928D00DE4DDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9922B61928D00DE4DDB /* ContentView.swift */; };
 		AD92C9952B61928F00DE4DDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD92C9942B61928F00DE4DDB /* Assets.xcassets */; };
-		AD92C9992B61928F00DE4DDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD92C9982B61928F00DE4DDB /* Preview Assets.xcassets */; };
 		AD92C9A12B61937300DE4DDB /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9A02B61937300DE4DDB /* Client.swift */; };
 		AD92C9A32B6193BC00DE4DDB /* GenericAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9A22B6193BC00DE4DDB /* GenericAPI.swift */; };
 		AD92C9A52B6193FC00DE4DDB /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9A42B6193FC00DE4DDB /* APIError.swift */; };
@@ -38,7 +37,6 @@
 		AD92C9922B61928D00DE4DDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AD92C9942B61928F00DE4DDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD92C9962B61928F00DE4DDB /* Bustle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bustle.entitlements; sourceTree = "<group>"; };
-		AD92C9982B61928F00DE4DDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AD92C9A02B61937300DE4DDB /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		AD92C9A22B6193BC00DE4DDB /* GenericAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAPI.swift; sourceTree = "<group>"; };
 		AD92C9A42B6193FC00DE4DDB /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -83,8 +81,6 @@
 				AD92C9922B61928D00DE4DDB /* ContentView.swift */,
 				AD92C9942B61928F00DE4DDB /* Assets.xcassets */,
 				AD92C9962B61928F00DE4DDB /* Bustle.entitlements */,
-				AD92C9972B61928F00DE4DDB /* Preview Content */,
-				AD92C98F2B61928D00DE4DDB /* Bustle */,
 				AD92C98E2B61928D00DE4DDB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,21 +91,6 @@
 				AD92C98D2B61928D00DE4DDB /* Bustle.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		AD92C98F2B61928D00DE4DDB /* Bustle */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Bustle;
-			sourceTree = "<group>";
-		};
-		AD92C9972B61928F00DE4DDB /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				AD92C9982B61928F00DE4DDB /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		AD92C99F2B61936600DE4DDB /* Networking */ = {
@@ -245,7 +226,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD92C9992B61928F00DE4DDB /* Preview Assets.xcassets in Resources */,
 				AD92C9952B61928F00DE4DDB /* Assets.xcassets in Resources */,
 				AD92C9C22B619A0500DE4DDB /* GetStopArrivalTimes.json in Resources */,
 				AD92C9C32B619A0500DE4DDB /* GetMapVehiclePoints.json in Resources */,
@@ -402,12 +382,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Bustle/Bustle.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Bustle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Bustle/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = DASQ93PW85;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -440,12 +421,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Bustle/Bustle.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Bustle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Bustle/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = DASQ93PW85;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;

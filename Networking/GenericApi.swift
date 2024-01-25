@@ -9,7 +9,6 @@ protocol GenericAPI {
 extension GenericAPI {
     func fetch<T: Codable>(type: T.Type, with request: URLRequest) async throws -> T {
         let (data, response) = try await session.data(for: request)
-
         do {
             let decoder = JSONDecoder()
             return try decoder.decode(type, from: data)
