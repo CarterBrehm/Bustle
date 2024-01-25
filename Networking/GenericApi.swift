@@ -1,33 +1,22 @@
-//
-//  GenericApi.swift
-//  GenericNetworkLayerExample
-//
-//  Created by İhsan Akbay on 11.12.2022.
-//
-
 import Foundation
 
-protocol GenericApi {
-	var session: URLSession { get }
-	func fetch<T: Codable>(type: T.Type, with request: URLRequest) async throws -> T
+protocol GenericAPI {
+    // all types that implement this protocol must contain their own session and a means to use it
+    var session: URLSession { get }
+    func fetch<T: Codable>(type: T.Type, with request: URLRequest) async throws -> T
 }
 
-extension GenericApi {
-	func fetch<T: Codable>(type: T.Type, with request: URLRequest) async throws -> T {
-		let (data, response) = try await session.data(for: request)
-		guard let httpResponse = response as? HTTPURLResponse else {
-			throw ApiError.requestFailed(description: "Invalid response")
-		}
-		guard httpResponse.statusCode == 200 else {
-			throw ApiError.responseUnsuccessful(description: "Status code: \(httpResponse.statusCode)")
-		}
+extension GenericAPI {
+    func fetch<T: Codable>(type: T.Type, with request: URLRequest) async throws -> T {
+        let (data, response) = try await session.data(for: request)
 
-		do {
-			let decoder = JSONDecoder()
-			return try decoder.decode(type, from: data)
-		} catch {
+        do {
+            let decoder = JSONDecoder()
+            return try decoder.decode(type, from: data)
+        } catch {
             debugPrint(error)
-			throw ApiError.jsonConversionFailure(description: error.localizedDescription)
-		}
-	}
+            throw APIError.jsonConversionFailure(description: error.localizedDescription)
+        }
+    }
 }
+

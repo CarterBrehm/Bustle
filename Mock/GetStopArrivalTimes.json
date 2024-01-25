@@ -1,0 +1,344 @@
+[
+  {
+    "Color": "#ff0000",
+    "RouteDescription": "Durango Route",
+    "RouteId": 21,
+    "RouteStopId": 64,
+    "ShowDefaultedOnMap": true,
+    "ShowEstimatesOnMap": true,
+    "StopDescription": "Scott Court",
+    "StopId": 15,
+    "Times": [
+      {
+        "EstimateTime": "\/Date(1706123606485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 89,
+        "Text": "",
+        "Time": "\/Date(1706123606485)\/",
+        "VehicleId": 30
+      },
+      {
+        "EstimateTime": "\/Date(1706124157485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 640,
+        "Text": "",
+        "Time": "\/Date(1706124157485)\/",
+        "VehicleId": 31
+      }
+    ]
+  },
+  {
+    "Color": "#ff0000",
+    "RouteDescription": "Durango Route",
+    "RouteId": 21,
+    "RouteStopId": 65,
+    "ShowDefaultedOnMap": true,
+    "ShowEstimatesOnMap": true,
+    "StopDescription": "Scott Crossing",
+    "StopId": 13,
+    "Times": [
+      {
+        "EstimateTime": "\/Date(1706123719485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 202,
+        "Text": "",
+        "Time": "\/Date(1706123719485)\/",
+        "VehicleId": 30
+      },
+      {
+        "EstimateTime": "\/Date(1706124270485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 753,
+        "Text": "",
+        "Time": "\/Date(1706124270485)\/",
+        "VehicleId": 31
+      }
+    ]
+  },
+  {
+    "Color": "#ff0000",
+    "RouteDescription": "Durango Route",
+    "RouteId": 21,
+    "RouteStopId": 63,
+    "ShowDefaultedOnMap": true,
+    "ShowEstimatesOnMap": true,
+    "StopDescription": "Criss Library",
+    "StopId": 3,
+    "Times": [
+      {
+        "EstimateTime": "\/Date(1706123518485)\/",
+        "IsArriving": true,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 1,
+        "Text": "Arriving",
+        "Time": "\/Date(1706123518485)\/",
+        "VehicleId": 31
+      },
+      {
+        "EstimateTime": "\/Date(1706124100485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 583,
+        "Text": "",
+        "Time": "\/Date(1706124100485)\/",
+        "VehicleId": 30
+      }
+    ]
+  },
+  {
+    "Color": "#ff0000",
+    "RouteDescription": "Durango Route",
+    "RouteId": 21,
+    "RouteStopId": 68,
+    "ShowDefaultedOnMap": true,
+    "ShowEstimatesOnMap": true,
+    "StopDescription": "Maverick Village\/University Village",
+    "StopId": 16,
+    "Times": [
+      {
+        "EstimateTime": "\/Date(1706123629485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 112,
+        "Text": "",
+        "Time": "\/Date(1706123629485)\/",
+        "VehicleId": 31
+      },
+      {
+        "EstimateTime": "\/Date(1706124211485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 694,
+        "Text": "",
+        "Time": "\/Date(1706124211485)\/",
+        "VehicleId": 30
+      }
+    ]
+  },
+  {
+    "Color": "#ff0000",
+    "RouteDescription": "Durango Route",
+    "RouteId": 21,
+    "RouteStopId": 69,
+    "ShowDefaultedOnMap": true,
+    "ShowEstimatesOnMap": true,
+    "StopDescription": "Milo Bail Student Center",
+    "StopId": 17,
+    "Times": [
+      {
+        "EstimateTime": "\/Date(1706123763485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 246,
+        "Text": "",
+        "Time": "\/Date(1706123763485)\/",
+        "VehicleId": 31
+      },
+      {
+        "EstimateTime": "\/Date(1706124345485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 828,
+        "Text": "",
+        "Time": "\/Date(1706124345485)\/",
+        "VehicleId": 30
+      }
+    ]
+  },
+  {
+    "Color": "#0400d6",
+    "RouteDescription": "Maverick Route",
+    "RouteId": 22,
+    "RouteStopId": 70,
+    "ShowDefaultedOnMap": true,
+    "ShowEstimatesOnMap": true,
+    "StopDescription": "Pacific St. Garage",
+    "StopId": 6,
+    "Times": [
+      {
+        "EstimateTime": "\/Date(1706123781485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 264,
+        "Text": "",
+        "Time": "\/Date(1706123781485)\/",
+        "VehicleId": 27
+      },
+      {
+        "EstimateTime": "\/Date(1706124338485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 821,
+        "Text": "",
+        "Time": "\/Date(1706124338485)\/",
+        "VehicleId": 24
+      }
+    ]
+  },
+  {
+    "Color": "#0400d6",
+    "RouteDescription": "Maverick Route",
+    "RouteId": 22,
+    "RouteStopId": 71,
+    "ShowDefaultedOnMap": true,
+    "ShowEstimatesOnMap": true,
+    "StopDescription": "Criss Library",
+    "StopId": 3,
+    "Times": [
+      {
+        "EstimateTime": "\/Date(1706123769485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 252,
+        "Text": "",
+        "Time": "\/Date(1706123769485)\/",
+        "VehicleId": 24
+      },
+      {
+        "EstimateTime": "\/Date(1706124056485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 539,
+        "Text": "",
+        "Time": "\/Date(1706124056485)\/",
+        "VehicleId": 27
+      }
+    ]
+  },
+  {
+    "Color": "#0400d6",
+    "RouteDescription": "Maverick Route",
+    "RouteId": 22,
+    "RouteStopId": 72,
+    "ShowDefaultedOnMap": true,
+    "ShowEstimatesOnMap": true,
+    "StopDescription": "PKI",
+    "StopId": 10,
+    "Times": [
+      {
+        "EstimateTime": "\/Date(1706123524485)\/",
+        "IsArriving": true,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 7,
+        "Text": "Arriving",
+        "Time": "\/Date(1706123524485)\/",
+        "VehicleId": 27
+      },
+      {
+        "EstimateTime": "\/Date(1706124081485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 564,
+        "Text": "",
+        "Time": "\/Date(1706124081485)\/",
+        "VehicleId": 24
+      }
+    ]
+  },
+  {
+    "Color": "#0400d6",
+    "RouteDescription": "Maverick Route",
+    "RouteId": 22,
+    "RouteStopId": 73,
+    "ShowDefaultedOnMap": true,
+    "ShowEstimatesOnMap": true,
+    "StopDescription": "Mammel Hall",
+    "StopId": 5,
+    "Times": [
+      {
+        "EstimateTime": "\/Date(1706123616485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 99,
+        "Text": "",
+        "Time": "\/Date(1706123616485)\/",
+        "VehicleId": 27
+      },
+      {
+        "EstimateTime": "\/Date(1706124173485)\/",
+        "IsArriving": false,
+        "IsDeparted": false,
+        "OnTimeStatus": 0,
+        "ScheduledArrivalTime": null,
+        "ScheduledDepartureTime": null,
+        "ScheduledTime": null,
+        "Seconds": 656,
+        "Text": "",
+        "Time": "\/Date(1706124173485)\/",
+        "VehicleId": 24
+      }
+    ]
+  }
+]

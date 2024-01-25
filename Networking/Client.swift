@@ -1,21 +1,17 @@
-//
-//  Client.swift
-//  GenericNetworkLayerExample
-//
-//  Created by İhsan Akbay on 11.12.2022.
-//
-
 import Foundation
 
-final class Client: GenericApi {
+final class Client: GenericAPI {
 
-	let session: URLSession
+    // client-owned URL session
+    let session: URLSession
 
-	init(configuration: URLSessionConfiguration) {
-		self.session = URLSession(configuration: configuration)
-	}
+    // passing in a custom configuration
+    init(configuration: URLSessionConfiguration) {
+        self.session = URLSession(configuration: configuration)
+    }
 
-	convenience init() {
-		self.init(configuration: .default)
-	}
+    // the default URLSessionConfiguration
+    convenience init() {
+        self.init(configuration: .default)
+    }
 }

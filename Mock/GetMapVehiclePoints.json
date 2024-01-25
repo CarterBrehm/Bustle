@@ -1,0 +1,54 @@
+[
+  {
+    "GroundSpeed": 0,
+    "Heading": 0,
+    "IsDelayed": false,
+    "IsOnRoute": true,
+    "Latitude": 41.258227,
+    "Longitude": -96.011656,
+    "Name": "Bus 733",
+    "RouteID": 21,
+    "Seconds": 68,
+    "TimeStamp": "\/Date(1706148654000-0700)\/",
+    "VehicleID": 31
+  },
+  {
+    "GroundSpeed": 22.00026841215,
+    "Heading": 167,
+    "IsDelayed": false,
+    "IsOnRoute": true,
+    "Latitude": 41.24617,
+    "Longitude": -96.01519,
+    "Name": "Bus 736",
+    "RouteID": 21,
+    "Seconds": 17,
+    "TimeStamp": "\/Date(1706148739000-0700)\/",
+    "VehicleID": 30
+  },
+  {
+    "GroundSpeed": 18.00062632563,
+    "Heading": 6,
+    "IsDelayed": false,
+    "IsOnRoute": true,
+    "Latitude": 41.24899,
+    "Longitude": -96.01543,
+    "Name": "Bus 741",
+    "RouteID": 22,
+    "Seconds": 13,
+    "TimeStamp": "\/Date(1706148735000-0700)\/",
+    "VehicleID": 24
+  },
+  {
+    "GroundSpeed": 0,
+    "Heading": 0,
+    "IsDelayed": false,
+    "IsOnRoute": true,
+    "Latitude": 41.24742,
+    "Longitude": -96.01577,
+    "Name": "Bus 734",
+    "RouteID": 22,
+    "Seconds": 13,
+    "TimeStamp": "\/Date(1706148735000-0700)\/",
+    "VehicleID": 27
+  }
+]
