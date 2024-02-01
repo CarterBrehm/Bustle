@@ -1,6 +1,6 @@
 import CoreLocation
 
-struct Stop: Identifiable {
+struct Stop: Identifiable, Equatable, Hashable {
     // primary key
     let id: Int
     
@@ -18,6 +18,15 @@ struct Stop: Identifiable {
     
     // times (will be filtered by bus)
     let times: [Time]
+    
+    // identifying same addresses
+    static func ==(left: Stop, right: Stop) -> Bool {
+        return left.addressId == right.addressId
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(addressId)
+    }
 }
 
 typealias Stops = [Stop]

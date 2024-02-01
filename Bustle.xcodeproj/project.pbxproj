@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD54C6662B6AD25000BEE6B3 /* BusMapIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54C6652B6AD25000BEE6B3 /* BusMapIcon.swift */; };
 		AD92C9912B61928D00DE4DDB /* BustleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9902B61928D00DE4DDB /* BustleApp.swift */; };
 		AD92C9932B61928D00DE4DDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9922B61928D00DE4DDB /* ContentView.swift */; };
 		AD92C9952B61928F00DE4DDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD92C9942B61928F00DE4DDB /* Assets.xcassets */; };
@@ -29,9 +30,14 @@
 		AD92C9C92B61CEFA00DE4DDB /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9C82B61CEFA00DE4DDB /* Fetcher.swift */; };
 		AD92C9CC2B620F0900DE4DDB /* HexStringToColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9CB2B620F0900DE4DDB /* HexStringToColor.swift */; };
 		AD92C9CF2B62191500DE4DDB /* BusMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92C9CE2B62191500DE4DDB /* BusMap.swift */; };
+		ADD5B4A32B62CB3C00172E56 /* VehicleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5B4A22B62CB3C00172E56 /* VehicleList.swift */; };
+		ADD5B4A52B62CD8600172E56 /* VehicleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5B4A42B62CD8600172E56 /* VehicleRow.swift */; };
+		ADD5B4A72B62E15C00172E56 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5B4A62B62E15C00172E56 /* Constants.swift */; };
+		ADFE44802B6C09A6009BC1FA /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFE447F2B6C09A6009BC1FA /* RefreshButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD54C6652B6AD25000BEE6B3 /* BusMapIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMapIcon.swift; sourceTree = "<group>"; };
 		AD92C98D2B61928D00DE4DDB /* Bustle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bustle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD92C9902B61928D00DE4DDB /* BustleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BustleApp.swift; sourceTree = "<group>"; };
 		AD92C9922B61928D00DE4DDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +61,10 @@
 		AD92C9C82B61CEFA00DE4DDB /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
 		AD92C9CB2B620F0900DE4DDB /* HexStringToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexStringToColor.swift; sourceTree = "<group>"; };
 		AD92C9CE2B62191500DE4DDB /* BusMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMap.swift; sourceTree = "<group>"; };
+		ADD5B4A22B62CB3C00172E56 /* VehicleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleList.swift; sourceTree = "<group>"; };
+		ADD5B4A42B62CD8600172E56 /* VehicleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRow.swift; sourceTree = "<group>"; };
+		ADD5B4A62B62E15C00172E56 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ADFE447F2B6C09A6009BC1FA /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				AD92C9CB2B620F0900DE4DDB /* HexStringToColor.swift */,
+				ADD5B4A62B62E15C00172E56 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -158,6 +169,10 @@
 			isa = PBXGroup;
 			children = (
 				AD92C9CE2B62191500DE4DDB /* BusMap.swift */,
+				ADD5B4A22B62CB3C00172E56 /* VehicleList.swift */,
+				ADD5B4A42B62CD8600172E56 /* VehicleRow.swift */,
+				AD54C6652B6AD25000BEE6B3 /* BusMapIcon.swift */,
+				ADFE447F2B6C09A6009BC1FA /* RefreshButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +257,8 @@
 			files = (
 				AD92C9B62B61966500DE4DDB /* Time.swift in Sources */,
 				AD92C9932B61928D00DE4DDB /* ContentView.swift in Sources */,
+				ADD5B4A52B62CD8600172E56 /* VehicleRow.swift in Sources */,
+				ADFE44802B6C09A6009BC1FA /* RefreshButton.swift in Sources */,
 				AD92C9AF2B61957200DE4DDB /* RS_Route.swift in Sources */,
 				AD92C9A92B61950300DE4DDB /* RS_Time.swift in Sources */,
 				AD92C9AD2B61954B00DE4DDB /* RS_Stop.swift in Sources */,
@@ -252,7 +269,10 @@
 				AD92C9C92B61CEFA00DE4DDB /* Fetcher.swift in Sources */,
 				AD92C9B82B61969600DE4DDB /* Stop.swift in Sources */,
 				AD92C9A52B6193FC00DE4DDB /* APIError.swift in Sources */,
+				ADD5B4A32B62CB3C00172E56 /* VehicleList.swift in Sources */,
 				AD92C9B42B61961E00DE4DDB /* Vehicle.swift in Sources */,
+				ADD5B4A72B62E15C00172E56 /* Constants.swift in Sources */,
+				AD54C6662B6AD25000BEE6B3 /* BusMapIcon.swift in Sources */,
 				AD92C9CF2B62191500DE4DDB /* BusMap.swift in Sources */,
 				AD92C9A12B61937300DE4DDB /* Client.swift in Sources */,
 				AD92C9B12B61959800DE4DDB /* RS_Vehicle.swift in Sources */,

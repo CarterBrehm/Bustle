@@ -1,6 +1,6 @@
 import MapKit
 
-struct Vehicle : Identifiable {
+struct Vehicle : Identifiable, Hashable, Equatable {
     // could be used to animate the vehicle between refreshes?
     let groundSpeed: Double
     let heading: Int
@@ -19,6 +19,18 @@ struct Vehicle : Identifiable {
     
     // route that this bus is currently traveling on (could be none, for ADA bus)
     let route: Route?
+    
+    var number: String {
+        return self.name.components(separatedBy: " ").last ?? "999"
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
+    }
+    
+    static func ==(left: Vehicle, right: Vehicle) -> Bool {
+        return left.id == right.id
+    }
 }
 
 typealias Vehicles = [Vehicle]

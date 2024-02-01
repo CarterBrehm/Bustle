@@ -9,10 +9,21 @@ import SwiftUI
 import MapKit
 
 struct ContentView: View {
-    @State var position = MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 41.2436841, longitude: -96.0106684), span: MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025)))
+    @State var position = Constants.origin
+    
+    @State var presentSheet = true
+    @State var sheetDetent = PresentationDetent.fraction(0.4)
     
     var body: some View {
         BusMap(position: $position)
+        .sheet(isPresented: $presentSheet) {
+            NavigationStack {
+                VehicleList()
+            }
+            .presentationDetents([.fraction(0.07), .fraction(0.4), .large], selection: $sheetDetent)
+            .interactiveDismissDisabled()
+            .presentationBackgroundInteraction(.enabled)
+        }
     }
 }
 

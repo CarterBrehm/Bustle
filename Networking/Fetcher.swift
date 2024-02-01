@@ -13,6 +13,9 @@ class Fetcher: ObservableObject {
     // timer for autorefresh
     @Published var timer: Timer?
     
+    // broadcast when we are refreshing
+    @Published var isFetching = false
+    
     let urlBase = "https://unomaha.ridesystems.net/Services/JSONPRelay.svc/"
     
     let vehicleEndpoint = "GetMapVehiclePoints"
@@ -26,6 +29,8 @@ class Fetcher: ObservableObject {
     }
     
     func fetch(mock: Bool) async throws {
+        
+        isFetching = true
         
         // fetch stops and times
         let scheduleRequest = mock ? URLRequest(url: Bundle.main.url(forResource: "GetStopArrivalTimes", withExtension: "json")!) : URLRequest(url: URL(string: urlBase + scheduleEndpoint)!)
@@ -87,7 +92,8 @@ class Fetcher: ObservableObject {
             }
             return nil
         })
-        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { _ in
+        isFetching = false
+        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { _ in
             Task {
                 try await self.fetch(mock: mock)
             }
